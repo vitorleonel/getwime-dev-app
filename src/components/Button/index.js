@@ -7,7 +7,9 @@ import Text from "../Text";
 export default function Button(props) {
   return (
     <Container {...props}>
-      <Text color={!props.outlined ? "#ffffff" : "#0984E3"}>{props.text}</Text>
+      <Text color={!props.outlined ? "#ffffff" : "#0984E3"} weight="bold">
+        {props.text}
+      </Text>
     </Container>
   );
 }
