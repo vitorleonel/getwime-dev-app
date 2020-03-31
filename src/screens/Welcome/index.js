@@ -12,12 +12,12 @@ export default function Welcome() {
       <Image />
 
       <Text
-        size={24}
+        size={20}
         lineHeight={28}
         align="center"
-        paddingLeft={24}
-        paddingRight={24}
-        marginTop={32}
+        marginTop={20}
+        paddingLeft={32}
+        paddingRight={32}
       >
         Divirta-se conversando em{" "}
         <Text size={20} weight="bold">
@@ -30,11 +30,23 @@ export default function Welcome() {
         .
       </Text>
 
-      <Row paddingLeft={48} paddingRight={48} marginTop={128}>
+      <Row
+        flex={1}
+        justifyContent="flex-end"
+        paddingTop={64}
+        paddingLeft={32}
+        paddingRight={32}
+      >
         <Button text="Entrar com chave de acesso" outlined onPress={() => {}} />
         <Button text="Criar conta anônima" marginTop={16} onPress={() => {}} />
 
-        <Text color="#BABABA" align="center" marginTop={64} onPress={() => {}}>
+        <Text
+          size={14}
+          color="#BABABA"
+          align="center"
+          marginTop={48}
+          onPress={() => {}}
+        >
           Termos de Uso e Política de Privacidade
         </Text>
       </Row>
