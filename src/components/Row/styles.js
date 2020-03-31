@@ -5,6 +5,8 @@ export const Container = styled.View`
   justify-content: ${props => props.justifyContent || "flex-start"};
   align-items: ${props => props.alignItems || "stretch"};
 
+  ${props => props.flex && `flex: ${props.flex};`}
+
   ${props => props.marginTop && `margin-top: ${props.marginTop}px;`}
   ${props => props.marginRight && `margin-right: ${props.marginRight}px;`}
   ${props => props.marginBottom && `margin-bottom: ${props.marginBottom}px;`}
