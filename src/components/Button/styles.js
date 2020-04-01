@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 export const Container = styled.TouchableOpacity.attrs({
   activeOpacity: 0.6
 })`
-  width: 100%;
+  width: ${props => props.width || 100}%;
   height: ${props => props.height || 48}px;
   border-radius: 6px;
 
