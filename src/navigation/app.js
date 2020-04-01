@@ -5,15 +5,25 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
+import TabNavigator from "../components/TabNavigator";
+
 import ChatsScreen from "../screens/Chats";
 import AccountScreen from "../screens/Account";
 import ConversationScreen from "../screens/Conversation";
 
 function GeneralNavigation() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Chats" component={ChatsScreen} />
-      <Tab.Screen name="Account" component={AccountScreen} />
+    <Tab.Navigator tabBar={TabNavigator}>
+      <Tab.Screen
+        name="Chats"
+        options={{ title: "Bate-papos", icon: "message-square" }}
+        component={ChatsScreen}
+      />
+      <Tab.Screen
+        name="Account"
+        options={{ title: "Minha Conta", icon: "user" }}
+        component={AccountScreen}
+      />
     </Tab.Navigator>
   );
 }
