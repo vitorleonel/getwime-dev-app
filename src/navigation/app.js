@@ -13,7 +13,7 @@ import ConversationScreen from "../screens/Conversation";
 
 function GeneralNavigation() {
   return (
-    <Tab.Navigator tabBar={TabNavigator}>
+    <Tab.Navigator tabBar={TabNavigator} initialRouteName="Chats">
       <Tab.Screen
         name="Chats"
         options={{ title: "Bate-papos", icon: "message-square" }}
