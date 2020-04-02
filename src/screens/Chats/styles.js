@@ -47,3 +47,41 @@ export const SearchAddChat = styled.TouchableOpacity.attrs({
   height: 48px;
   justify-content: center;
 `;
+
+export const ChatList = styled.FlatList`
+  margin-top: 24px;
+`;
+
+export const Chat = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.6
+})`
+  flex-direction: row;
+  align-items: center;
+
+  background-color: #ffffff;
+  border-radius: 6px;
+  margin-bottom: 16px;
+
+  ${Platform.OS === "ios" &&
+    `
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  `}
+
+  ${Platform.OS === "android" &&
+    `
+    elevation: 2;
+  `}
+`;
+
+export const ChatImage = styled.Image.attrs({
+  resizeMode: "cover"
+})`
+  width: 78px;
+  height: 78px;
+  margin-right: 12px;
+
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+`;
