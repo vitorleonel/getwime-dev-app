@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 import { Platform } from "react-native";
-import { getStatusBarHeight, isIphoneX } from "react-native-iphone-x-helper";
+import { getStatusBarHeight } from "react-native-iphone-x-helper";
 
 export const Container = styled.View`
   flex: 1;
@@ -25,7 +25,7 @@ export const Search = styled.View`
 
   ${Platform.OS === "android" &&
     `
-    elevation: 2;
+    elevation: 3;
   `}
 `;
 
