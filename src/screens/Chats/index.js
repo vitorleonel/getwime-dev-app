@@ -69,7 +69,13 @@ export default function Chats({ navigation }) {
       <Chat onPress={() => navigation.navigate("Conversation", { chat: item })}>
         <ChatImage source={{ uri: item.image }} />
 
-        <Row flex={1}>
+        <Row
+          flex={1}
+          marginTop={12}
+          marginBottom={12}
+          marginLeft={12}
+          marginRight={12}
+        >
           <Text weight="bold" marginBottom={4}>
             {item.name} ({item.membersTotal})
           </Text>

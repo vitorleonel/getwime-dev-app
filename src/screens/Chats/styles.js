@@ -5,13 +5,14 @@ import { getStatusBarHeight, isIphoneX } from "react-native-iphone-x-helper";
 export const Container = styled.View`
   flex: 1;
   background-color: #ffffff;
-  padding-top: ${isIphoneX() ? getStatusBarHeight() + 24 : 24}px;
-  padding-horizontal: 24px;
+  padding-top: ${getStatusBarHeight() + 24}px;
 `;
 
 export const Search = styled.View`
   background-color: #ffffff;
   border-radius: 6px;
+  margin-horizontal: 24px;
+
   flex-direction: row;
   align-items: center;
 
@@ -48,9 +49,12 @@ export const SearchAddChat = styled.TouchableOpacity.attrs({
   justify-content: center;
 `;
 
-export const ChatList = styled.FlatList`
-  margin-top: 24px;
-`;
+export const ChatList = styled.FlatList.attrs({
+  contentContainerStyle: {
+    paddingHorizontal: 24,
+    paddingTop: 24
+  }
+})``;
 
 export const Chat = styled.TouchableOpacity.attrs({
   activeOpacity: 0.6
@@ -71,17 +75,15 @@ export const Chat = styled.TouchableOpacity.attrs({
 
   ${Platform.OS === "android" &&
     `
-    elevation: 2;
+    elevation: 3;
   `}
 `;
 
 export const ChatImage = styled.Image.attrs({
   resizeMode: "cover"
 })`
-  width: 78px;
-  height: 78px;
-  margin-right: 12px;
-
+  width: 86px;
+  height: 86px;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
 `;
