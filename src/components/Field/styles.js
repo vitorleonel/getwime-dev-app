@@ -3,7 +3,9 @@ import { Platform } from "react-native";
 
 export const Container = styled.View``;
 
-export const Input = styled.TextInput`
+export const Input = styled.TextInput.attrs({
+  placeholderTextColor: "#bababa"
+})`
   width: 100%;
   height: 48px;
   background-color: #ffffff;
