@@ -8,7 +8,7 @@ import {
   SearchAddChat,
   ChatList,
   Chat,
-  ChatImage
+  ChatImage,
 } from "./styles";
 
 import Row from "../../components/Row";
@@ -30,7 +30,7 @@ export default function Chats({ navigation }) {
           "https://images.unsplash.com/photo-1582653984995-905583e4d3c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1374&q=80",
         description:
           "Lorem Ipsum is simply dummy text of the printing and typesetting",
-        membersTotal: 146
+        membersTotal: 146,
       },
       {
         id: 2,
@@ -39,17 +39,23 @@ export default function Chats({ navigation }) {
           "https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80",
         description:
           "Lorem Ipsum is simply dummy text of the printing and typesetting",
-        membersTotal: 817
-      }
+        membersTotal: 817,
+      },
     ];
 
-    setChats(data);
+    // setChats(data);
   }, []);
 
   function EmptyChats() {
     return (
       <Row flex={1} alignItems="center" justifyContent="center">
-        <Text color="#BABABA" align="center" lineHeight={20}>
+        <Text
+          color="#BABABA"
+          align="center"
+          lineHeight={20}
+          paddingLeft={24}
+          paddingRight={24}
+        >
           Você ainda não faz parte de nenhum bate-papo. Crie um agora mesmo e
           convide seus amigos!
         </Text>
@@ -59,6 +65,7 @@ export default function Chats({ navigation }) {
           text="Novo bate-papo"
           leftIcon="plus-circle"
           marginTop={32}
+          onPress={() => navigation.navigate("CreateChat")}
         />
       </Row>
     );
@@ -93,7 +100,7 @@ export default function Chats({ navigation }) {
         <Icon name="search" size={22} color="#BABABA" marginLeft={12} />
         <SearchInput placeholder="Encontre bate-papos" />
 
-        <SearchAddChat>
+        <SearchAddChat onPress={() => navigation.navigate("CreateChat")}>
           <Icon
             name="plus-circle"
             size={22}
@@ -113,7 +120,7 @@ export default function Chats({ navigation }) {
       ) : (
         <ChatList
           data={chats}
-          keyExtractor={item => String(item.id)}
+          keyExtractor={(item) => String(item.id)}
           renderItem={renderChat}
         />
       )}

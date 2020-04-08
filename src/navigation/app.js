@@ -9,6 +9,8 @@ import TabNavigator from "../components/TabNavigator";
 
 import ChatsScreen from "../screens/Chats";
 import AccountScreen from "../screens/Account";
+
+import CreateChatScreen from "../screens/CreateChat";
 import ConversationScreen from "../screens/Conversation";
 
 function GeneralNavigation() {
@@ -32,6 +34,7 @@ export default function AppNavigation() {
   return (
     <Stack.Navigator initialRouteName="General" headerMode="none">
       <Stack.Screen name="General" component={GeneralNavigation} />
+      <Stack.Screen name="CreateChat" component={CreateChatScreen} />
       <Stack.Screen name="Conversation" component={ConversationScreen} />
     </Stack.Navigator>
   );
