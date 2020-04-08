@@ -6,7 +6,7 @@ import Row from "../../components/Row";
 import Text from "../../components/Text";
 import Button from "../../components/Button";
 
-export default function Welcome() {
+export default function Welcome({ navigation }) {
   return (
     <Container>
       <Image />
@@ -37,7 +37,11 @@ export default function Welcome() {
         paddingLeft={32}
         paddingRight={32}
       >
-        <Button text="Entrar com chave de acesso" outlined onPress={() => {}} />
+        <Button
+          text="Entrar com chave de acesso"
+          outlined
+          onPress={() => navigation.navigate("Auth")}
+        />
         <Button text="Criar conta anônima" marginTop={16} onPress={() => {}} />
 
         <Text
