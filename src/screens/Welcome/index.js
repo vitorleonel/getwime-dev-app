@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { Container, Image } from "./styles";
 
@@ -6,7 +6,11 @@ import Row from "../../components/Row";
 import Text from "../../components/Text";
 import Button from "../../components/Button";
 
+import UserContext from "../../contexts/User";
+
 export default function Welcome({ navigation }) {
+  const { defineUser } = useContext(UserContext);
+
   return (
     <Container>
       <Image />
@@ -42,7 +46,12 @@ export default function Welcome({ navigation }) {
           outlined
           onPress={() => navigation.navigate("Auth")}
         />
-        <Button text="Criar conta anônima" marginTop={16} onPress={() => {}} />
+
+        <Button
+          text="Criar conta anônima"
+          marginTop={16}
+          onPress={() => defineUser({ name: "Vitor Leonel" })}
+        />
 
         <Text
           size={14}

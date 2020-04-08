@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navigation from "./navigation";
 
+import UserContext from "./contexts/User";
+
 export default function App() {
-  return <Navigation />;
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // ...
+  }, []);
+
+  return (
+    <UserContext.Provider value={{ user, defineUser: setUser }}>
+      <Navigation />
+    </UserContext.Provider>
+  );
 }
