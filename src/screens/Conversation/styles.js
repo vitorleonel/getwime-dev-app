@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 import {
   getStatusBarHeight,
   getBottomSpace,
-  isIphoneX
+  isIphoneX,
 } from "react-native-iphone-x-helper";
 
 export const Container = styled.View`
@@ -27,22 +27,19 @@ export const Messages = styled.FlatList.attrs({
   contentContainerStyle: {
     paddingHorizontal: 24,
     paddingTop: 16,
-    flex: 1
-  }
+    flex: 1,
+  },
 })``;
 
 export const Message = styled.TouchableOpacity.attrs({
-  activeOpacity: 0.6
+  activeOpacity: 0.6,
 })`
-  align-self: ${props => (props.me ? "flex-end" : "flex-start")};
+  align-self: ${(props) => (props.me ? "flex-end" : "flex-start")};
   max-width: 80%;
   padding: 12px;
   border-radius: 6px;
-  background-color: ${props => (props.me ? "#0984E3" : "#f1f0f0")};
+  background-color: ${(props) => (props.me ? "#0984E3" : "#f1f0f0")};
   margin-bottom: 16px;
-
-  ${Platform.OS === "ios" && `box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);`}
-  ${Platform.OS === "android" && `elevation: 3;`}
 `;
 
 export const Write = styled.View`
@@ -56,7 +53,7 @@ export const Write = styled.View`
   ${Platform.OS === "ios" && `box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.03);`}
 
   ${Platform.OS === "android" &&
-    `
+  `
     border-top-width: 1px;
     border-top-color: rgba(0, 0, 0, 0.05);
     elevation: 10;
@@ -65,7 +62,7 @@ export const Write = styled.View`
 
 export const WriteInput = styled.TextInput.attrs({
   multiline: true,
-  placeholderTextColor: "#bababa"
+  placeholderTextColor: "#bababa",
 })`
   flex: 1;
   min-height: 40px;
