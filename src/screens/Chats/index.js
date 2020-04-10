@@ -43,7 +43,7 @@ export default function Chats({ navigation }) {
       },
     ];
 
-    // setChats(data);
+    setChats(data);
   }, []);
 
   function EmptyChats() {
