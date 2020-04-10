@@ -32,7 +32,7 @@ function GeneralNavigation() {
 
 export default function AppNavigation() {
   return (
-    <Stack.Navigator initialRouteName="General" headerMode="none">
+    <Stack.Navigator initialRouteName="General" headerMode="none" mode="modal">
       <Stack.Screen name="General" component={GeneralNavigation} />
       <Stack.Screen name="CreateChat" component={CreateChatScreen} />
       <Stack.Screen name="Conversation" component={ConversationScreen} />
