@@ -8,10 +8,6 @@ export default function Select(props) {
     <RNPickerSelect
       style={styles}
       useNativeAndroidPickerStyle={false}
-      placeholder={{
-        label: props.placeholder || "Escolha uma opção",
-        value: null,
-      }}
       {...props}
     />
   );
