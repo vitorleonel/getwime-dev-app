@@ -20,7 +20,7 @@ export default function TabNavigator({ state, descriptors, navigation }) {
           const event = navigation.emit({
             type: "tabPress",
             target: route.key,
-            canPreventDefault: true
+            canPreventDefault: true,
           });
 
           if (!isFocused && !event.defaultPrevented) {
@@ -31,7 +31,7 @@ export default function TabNavigator({ state, descriptors, navigation }) {
         const onLongPress = () => {
           navigation.emit({
             type: "tabLongPress",
-            target: route.key
+            target: route.key,
           });
         };
 
@@ -39,7 +39,7 @@ export default function TabNavigator({ state, descriptors, navigation }) {
           <Item onPress={onPress} onLongPress={onLongPress} key={index}>
             <Icon name={icon} size={22} color={currentColor} />
 
-            <Text size={16} color={currentColor} marginLeft={8}>
+            <Text weight="bold" size={16} color={currentColor} marginLeft={8}>
               {label}
             </Text>
           </Item>
